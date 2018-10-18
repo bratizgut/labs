@@ -10,9 +10,8 @@ void table(unsigned char pattern[MAXLINE]){
 	int t = strlen(pattern), i, j=0;	
 	for (i = 0; i<=255; i++)
 		shift[i] = t;
-	for(i = 0; i < t-1; i++){
+	for(i = 0; i < t-1; i++)
 		shift[pattern[i]] = t-i-1;
-	}
 }
 
 void pos(unsigned char pattern[MAXLINE],int i){
