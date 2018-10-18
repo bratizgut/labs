@@ -11,14 +11,14 @@ void check(int b1, int b2, char s[]){
 	}
 	for (int i = 0; i < strlen(s); i++){
 		if (s[i] == '.'){
-			t=+t+1;
-			if (t> 1){
+			t = t + 1;
+			if (t > 1){
 				printf("bad input");
 				exit(0);
 			}
 			continue;
 		}
-		if (((s[i] - '0' >= b1)&&(b1 < 10)) || ((s[i] - 'A' >= b1)&&(b1 >= 10)) || (s[i] - '0' < 0)){
+		if (((s[i] - '0' >= b1) && (b1 < 10)) || ((s[i] - 'A' >= b1) && (b1 >= 10)) || (s[i] - '0' < 0)){
 			printf("bad input");
 			exit(0);
 		}
@@ -44,8 +44,8 @@ int TenTob2(int b2, unsigned long long num){
 }
 
 void b1Tob2(int b1, int b2, char s[14]){
-	unsigned long long num=0, count=1;
-	for (int i= strlen(s)-1; i >= 0; i--){
+	unsigned long long num = 0, count = 1;
+	for (int i= strlen(s) - 1; i >= 0; i--){
 		if (s[i] >= 'A'){
 			num = num + (s[i] + 10 - 'A') * count;
 			count *= b1;
@@ -58,14 +58,14 @@ void b1Tob2(int b1, int b2, char s[14]){
 }
 
 void b1Tob2Dot(int b1,int b2,char s[14]){
-	double num=0, count;
-	int d, i=0;
+	double num = 0, count;
+	int d, i = 0;
 	count = (float)b1;
 	if ((s[0] == '0') && strlen(s) == 1){
 		printf("0");
 		exit(0);
 	}
-	for (i = 0; i <= strlen(s)-1; i++){
+	for (i = 0; i <= strlen(s) - 1; i++){
 		if (s[i] >= 'A'){
 			num = num + (s[i] + 10 - 'A')/count;
 			count *= (float)b1;
@@ -85,8 +85,8 @@ void b1Tob2Dot(int b1,int b2,char s[14]){
 }
 
 int main(void){
-	char s[14]={'\0'}, s1[14]={'\0'}, s2[14]={'\0'};
-	int b1, b2, t=0, i=0;
+	char s[14] = {'\0'}, s1[14] = {'\0'}, s2[14] = {'\0'};
+	int b1, b2, t = 0, i = 0;
 	
 	
 	scanf("%d %d ", &b1, &b2);
@@ -109,10 +109,10 @@ int main(void){
 			for (t=0; t < i; t++){
 				s1[t] = s[t];
 			}
-			for (t=i+1; s[t] != '\0'; t++){
+			for (t = i + 1; s[t] != '\0'; t++){
 				s2[t-i-1] = s[t];
 			}
-			if (strlen(s1)*strlen(s2)==0){
+			if (strlen(s1) * strlen(s2) == 0){
 				printf("bad input");
 				exit(0);
 			}
