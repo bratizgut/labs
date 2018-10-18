@@ -1,9 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
-void sort(int *s, int left, int right)
-{
+void sort(int *s, int left, int right) {
 	int i = left, j = right, w = 0;
 	int x = (left + right) / 2;
 	do {
@@ -17,7 +15,6 @@ void sort(int *s, int left, int right)
 			j--;
 		}
 	} while (i < j);
-
 	if (left < j) sort(s, left, j);
 	if (i < right) sort(s, i, right);
 }
@@ -28,9 +25,7 @@ int main(void) {
 	s = (int*)malloc(N * sizeof(int));
 	for (int i = 0; i<N; i++)
 		scanf("%d", &s[i]);
-	
 	sort(s, 0, N - 1);
-
 	for (int i = 0; i<N; i++)
 		printf("%d ", s[i]);
 	free(s);
