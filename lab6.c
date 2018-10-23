@@ -22,6 +22,8 @@ void sort(int *s, int left, int right) {
 int main(void) {
 	int N = 0, *s;
 	scanf("%d", &N);
+	if (N <= 0)
+		return 0;
 	s = (int*)malloc(N * sizeof(int));
 	for (int i = 0; i<N; i++)
 		scanf("%d", &s[i]);
