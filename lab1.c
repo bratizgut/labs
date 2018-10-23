@@ -7,7 +7,7 @@
 int shift[255];
 
 void table(unsigned char pattern[MAXLINE]){
-	int t = strlen(pattern), i, j=0;	
+	int t = strlen(pattern), i;	
 	for (i = 0; i<=255; i++)
 		shift[i] = t;
 	for(i = 0; i < t-1; i++)
