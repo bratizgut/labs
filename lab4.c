@@ -67,7 +67,7 @@ void Dijkstra( int arr[], int len, int N ){
 
 int main(void){
 	int arr[10], N, len;
-	char str[10];
+	char str[11];
 	scanf("%s", str);
 	len = strlen(str);
 	scanf("%d", &N);
