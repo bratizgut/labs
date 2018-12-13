@@ -30,7 +30,7 @@ void up(int *arr, int i){
 
 int main(void){
 	long N;
-	int	*arr, i, s;
+	int	*arr, i;
 	scanf("%ld", &N);
 	if (N <= 0)
 		return 0;
@@ -47,5 +47,6 @@ int main(void){
 	}
 	for (int i = 0; i < N; i++)
 		printf("%d ", arr[i]);
+	free(arr);
 	return 0;
 }
