@@ -37,6 +37,6 @@ int main(void){
         j = check(pattern, str, ind);
         ind += j;
         if (j < len)
-            memmove(str, str+j, len);
+            memmove(str, str+j, len-j);
     }
 }
