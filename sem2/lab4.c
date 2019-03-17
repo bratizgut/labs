@@ -48,7 +48,7 @@ void Sort(int ind, int** arr, int* checked, int N, struct stack *out){
 
 int main(void){
 
-    int N = 0, M = 0, a = 0, b = 0;
+    int N = 0, M = 0, a = 0, b = 0, S = 0;
 	FILE *in;
 	
 	in = fopen("in.txt", "r");
@@ -72,10 +72,12 @@ int main(void){
         return 0;
     }
 	
+	S = (N < M) ? N : M;
+	
 	int **arr;
     arr = (int **)malloc(N * sizeof(int*));
     for(int i = 0; i < N; i++){
-        arr[i] = (int *)malloc(sizeof(int));
+        arr[i] = (int *)malloc((S+1) * sizeof(int));
 	}
 	
 	int *checked;
@@ -100,7 +102,6 @@ int main(void){
         }
 		
         arr[a-1][0]++;
-        arr[a-1] = (int*) realloc(arr[a-1], (arr[a-1][0]+1)*sizeof(int));
         arr[a-1][arr[a-1][0]] = b;
     }
 	
@@ -112,6 +113,8 @@ int main(void){
     stkPrint(out);
 	
 	free(out);
+	for(int i = 0; i < N; i++)
+		free(arr[i]);
 	free(arr);
 	free(checked);
 	fclose(in);
