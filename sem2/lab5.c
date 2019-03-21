@@ -86,6 +86,7 @@ int main(){
 		}
 		GRAPH[i].n1--;
 		GRAPH[i].n2--;
+	    	GRAPH[i].OUT = 0;
     }
 
     sort(0, M-1, GRAPH);
