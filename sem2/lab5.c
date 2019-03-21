@@ -88,8 +88,8 @@ int main(){
 		GRAPH[i].n2--;
 	    	GRAPH[i].OUT = 0;
     }
-
-    sort(0, M-1, GRAPH);
+    if(M > 0)	
+    	sort(0, M-1, GRAPH);
     for(int i = 0; i < N; i++)
         color[i] = i;
 
