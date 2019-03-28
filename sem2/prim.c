@@ -40,13 +40,14 @@ void sort(int left, int right, GRAPH *s){
 GRAPH *findmin(GRAPH *minB, GRAPH *graph_in, int *count, int N, int M){
 	int min = INT_MAX;
 	minB = NULL;
-	for(int i = 0; i < M; i++)
+	for(int i = 0; i < M; i++){
 		if ((((count[graph_in[i].n1] == 1) && (count[graph_in[i].n2] == 0)) ||
-		((count[graph_in[i].n2] == 1) && (count[graph_in[i].n1] == 0))) && (graph_in[i].weight <= min) && (graph_in[i].weight != -1)){
-			min = graph_in[i].weight;
+		((count[graph_in[i].n2] == 1) && (count[graph_in[i].n1] == 0))))
+			if((graph_in[i].weight <= min) && (graph_in[i].weight != -1)){
 			minB = &graph_in[i];
 			return minB;
-		}
+			}
+	}
 	return minB;	
 }
 
