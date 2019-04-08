@@ -105,7 +105,7 @@ int main(){
 		graph_in = (GRAPH*)malloc(M * sizeof(GRAPH));
 
 		for(int i = 0; i < M; i++){
-			if (fscanf(in, "%d %d %ld", &graph_in[i].n1, &graph_in[i].n2, &graph_in[i].weight) != EOF){
+			if (fscanf(in, "%d %d %d", &graph_in[i].n1, &graph_in[i].n2, &graph_in[i].weight) != EOF){
 			} else {
 				printf("bad number of lines");
 				indicate = 1;
