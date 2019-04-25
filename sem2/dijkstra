@@ -1,0 +1,44 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <limits.h>
+
+void Dijkstra(){
+	GRAPH min;
+	while(checked[0] < N){
+		min = findmin();
+		checked[min.n1] = 1;
+		checked[0]++;
+	}
+}
+
+int main(){
+	int N, M;
+	int **arr;
+	int *checked;
+	
+	scanf("%d", &N);
+	scanf("%d", &M);
+	
+	checked = calloc(N+1, sizeof(int));
+	arr = (int**)malloc(N * sizeof(int));
+	for(int i = 0; i < N; i++)
+		arr[i] = (int*)malloc(N * sizeof(int));
+	
+	for(int i = 0; i < M; i++){
+		if (fscanf(in, "%d %d %d", &graph_in[i].n1, &graph_in[i].n2, &graph_in[i].weight) != EOF){
+			} else {
+				printf("bad number of lines");
+				break;
+			}
+			if((graph_in[i].n1 <= 0) || (graph_in[i].n2 <= 0) || (graph_in[i].n1 > N) || (graph_in[i].n2 > N)){
+				printf("bad vertex");
+				break;
+			}
+			if((graph_in[i].weight < 0) || (graph_in[i].weight > INT_MAX)){
+				printf("bad length");
+				break;
+			}
+	}
+	
+	return 0;
+}
